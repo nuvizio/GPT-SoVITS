@@ -45,6 +45,9 @@ def html_center(text, label="p"):
 def uvr(model_name, inp_root, save_root_vocal, paths, save_root_ins, agg, format0):
     infos = []
     try:
+        if model_name is None or model_name == "":
+            yield "Error: Please select a model first"
+            return
         inp_root = clean_path(inp_root)
         save_root_vocal = clean_path(save_root_vocal)
         save_root_ins = clean_path(save_root_ins)
